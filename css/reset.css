@@ -1,0 +1,66 @@
+/* Modern CSS Reset (lekka i zgodna ze standardami wersja) */
+
+/* 1. Resetuje marginesy i paddingi, ustawia box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 2. Ustawia domyślną wysokość */
+  html, body {
+    height: 100%;
+  }
+  
+  /* 3. Poprawia domyślną typografię */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: system-ui, sans-serif;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  /* 4. Media bez ramek */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* 5. Formularze - odziedziczają font */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 6. Linki bez podkreśleń i z dziedziczeniem koloru */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* 7. Listy bez kropek */
+  ul, ol {
+    list-style: none;
+  }
+  
+  /* 8. Tabele bez odstępów */
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  /* 9. Przyciski i elementy klikane bez outline w przeglądarkach mobilnych */
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  /* 10. HTML5 elements display block (na wszelki wypadek) */
+  article, aside, details, figcaption, figure,
+  footer, header, main, nav, section, summary {
+    display: block;
+  }
+  
