@@ -2,7 +2,7 @@
   --font-raleway: "Raleway", sans-serif;
   --font-open-sans: "Open Sans", sans-serif;
   --color-primary: #08a6e4;
-  --color-primary-shadow: rgba(7, 172, 230, 0.16);
+  --color-primary-shadow: rgba(4, 72, 97, 0.16);
   --color-redish: #fb3b64;
   --color-green: #55dfb4;
   --color-black: #000000;
@@ -25,4 +25,62 @@ body {
 
 a {
   text-decoration: none;
+}
+
+header {
+  height: 70px;
+  box-shadow: 0px 3px 6px var(--color-primary-shadow);
+}
+
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 95px;
+
+    li {
+      font-family: var(--font-open-sans);
+      color: var(--color-grey);
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 600;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -28px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: var(--color-primary);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        color: black;
+        cursor: pointer;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+  .logo {
+    font-family: var(--font-raleway);
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--color-primary);
+  }
+}
+
+.nav-links {
 }
