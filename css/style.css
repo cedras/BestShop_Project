@@ -133,7 +133,6 @@ header {
 
 .statistics {
   margin-top: 100px;
-  
 
   h2 {
     text-align: center;
@@ -213,4 +212,154 @@ header {
 .statistics_column_item:nth-child(3) img {
   top: 8px;
   left: 42%;
+}
+
+.benefits {
+  background-color: var(--color-light-grey);
+  padding: 100px 0;
+}
+
+.benefits_column {
+  padding: 0px 100px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.benefit_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  background-color: white;
+  height: 370px;
+  border: 1px solid #e8e9ed;
+  border-radius: 5px;
+}
+
+.benefit_macbook {
+  --accent-color: var(--color-redish);
+
+  .item_shape {
+    width: 386px;
+    height: auto;
+    margin-right: 117px;
+    margin-top: 48px;
+
+    &::before {
+      content: "";
+      width: 180px;
+      height: 180px;
+      background-color: var(--accent-color);
+      display: block;
+      border-radius: 41px;
+      position: absolute;
+      right: 0;
+      top: -30px;
+      transform: rotate(45deg);
+    }
+  }
+
+
+
+}
+
+.benefit_iphone {
+  --accent-color: var(--color-primary);
+  flex-direction: row-reverse;
+
+  h1{
+    max-width: 246px;
+    
+  }
+
+  .item_shape {
+    width: 386px;
+    height: auto;
+    margin-left: 70px;
+    margin-top: 29px;
+
+    &::before {
+      content: "";
+      width: 300px;
+      height: 300px;
+      background-color: var(--accent-color);
+      display: block;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: -30px;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.item_text {
+  display: flex;
+  flex-direction: column;
+  margin: 90px 36px;
+  max-width: 416px;
+
+  &::after {
+    content: "";
+    width: 328px;
+    background-color: var(--accent-color);
+    height: 4px;
+    display: block;
+    margin-top: 50px;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-family: var(--font-raleway);
+    color: black;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 16px;
+    color: black;
+    font-weight: 400;
+    margin-top: 20px;
+  }
+}
+
+.item_shape {
+  position: relative;
+
+  img {
+    
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.benefit_trumpet {
+  --accent-color: var(--color-green);
+  width: 623px;
+}
+
+.benefit_double {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item_shape_solo {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  background-color: var(--color-green);
+  margin-left: 60px;
+  
+
+  img {
+    
+   
+    width: 295px;
+  height: auto;
+  margin-top: 55px; 
+  
+  }
 }
