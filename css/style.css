@@ -363,3 +363,76 @@ header {
   
   }
 }
+
+.pricing {
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pricing_row {
+  display: flex;
+  justify-content: center;
+  margin-top: 71px;
+  gap: 30px;
+}
+
+.single_pricing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 372px;
+  border-radius: 14px;
+  border: 1px solid var(--accent-color);
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 20px;
+  }
+}
+
+.pricing_type {
+  font-size: 20px;
+  font-family: var(--font-raleway);
+  color: black;
+  font-weight: 700;
+  margin-top: 34px;
+}
+
+.price {
+  font-size: 46px;
+  font-family: var(--font-open-sans);
+  color: var(--accent-color);
+  font-weight: 300;
+  margin-top: 14px;
+  
+}
+
+.pricing_limited {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 0.75rem;
+  font-family: var(--font-raleway);
+  font-weight: 700;
+}
+
+.pricing_basic {
+  --accent-color: var(--color-redish);
+}
+
+.pricing_pro {
+  --accent-color: var(--color-primary);
+  width: 400px;
+}
+
+.pricing_premium {
+  --accent-color: var(--color-green);
+}
+
