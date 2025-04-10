@@ -43,6 +43,19 @@ a {
   padding: 22px 157px;
 }
 
+.btn-medium {
+  height: 50px;
+  width: 150px;
+  font-size: 13px;
+  background-color: var(--accent-color);
+  padding: 16px 57px;
+}
+
+.btn-medium-pro {
+  width: 165px;
+  padding: 16px 65px;
+}
+
 header {
   height: 70px;
   box-shadow: 0px 3px 6px var(--color-primary-shadow);
@@ -223,7 +236,6 @@ header {
   padding: 0px 100px;
   display: flex;
   flex-direction: column;
-  
 }
 
 .benefit_item {
@@ -259,18 +271,14 @@ header {
       transform: rotate(45deg);
     }
   }
-
-
-
 }
 
 .benefit_iphone {
   --accent-color: var(--color-primary);
   flex-direction: row-reverse;
 
-  h1{
+  h1 {
     max-width: 246px;
-    
   }
 
   .item_shape {
@@ -328,7 +336,6 @@ header {
   position: relative;
 
   img {
-    
     position: relative;
     z-index: 2;
   }
@@ -352,15 +359,11 @@ header {
   height: auto;
   background-color: var(--color-green);
   margin-left: 60px;
-  
 
   img {
-    
-   
     width: 295px;
-  height: auto;
-  margin-top: 55px; 
-  
+    height: auto;
+    margin-top: 55px;
   }
 }
 
@@ -382,7 +385,6 @@ header {
 .single_pricing {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 372px;
   border-radius: 14px;
@@ -394,7 +396,29 @@ header {
     justify-content: center;
     align-items: center;
     margin-top: 40px;
-    gap: 20px;
+    gap: 25px;
+
+    li::before {
+      content: "";
+      width: 11px;
+      height: 11px;
+      display: inline-block;
+      margin-right: 10px;
+      background-image: url("../assets/Close.svg");
+    }
+    .include::before {
+      content: "";
+      width: 11px;
+      height: 11px;
+      display: inline-block;
+      margin-right: 10px;
+      background-image: url("../assets/Ckechmark-1.svg");
+    }
+  }
+
+  .btn {
+    position: relative;
+    bottom: -25px;
   }
 }
 
@@ -412,12 +436,12 @@ header {
   color: var(--accent-color);
   font-weight: 300;
   margin-top: 14px;
-  
 }
 
 .pricing_limited {
   text-align: center;
   margin-top: 5px;
+  margin-bottom: 60px;
   font-size: 0.75rem;
   font-family: var(--font-raleway);
   font-weight: 700;
@@ -425,14 +449,23 @@ header {
 
 .pricing_basic {
   --accent-color: var(--color-redish);
+  .price {
+    margin-bottom: 83px;
+  }
 }
 
 .pricing_pro {
   --accent-color: var(--color-primary);
-  width: 400px;
+  width: 405px;
+  margin: 0 20px;
+  box-shadow: 0px 3px 6px var(--color-primary-shadow);
+  transform: scale(1.05);
+
+  .btn {
+    box-shadow: 5px 10px 14px var(--color-primary-shadow);
+  }
 }
 
 .pricing_premium {
   --accent-color: var(--color-green);
 }
-
