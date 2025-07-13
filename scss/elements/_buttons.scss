@@ -1,0 +1,28 @@
+.btn {
+  color: white;
+  background-color: $color-primary;
+  border-radius: 40px;
+  box-shadow: 5px 10px 14px $color-primary-shadow;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-large {
+  height: 67px;
+  width: 440px;
+  font-size: 16px;
+  padding: 22px 157px;
+}
+
+.btn-medium {
+  height: 50px;
+  width: 150px;
+  font-size: 13px;
+  background-color:  $color-redish;
+  padding: 16px 57px;
+}
+
+.btn-medium-pro {
+  width: 165px;
+  padding: 16px 65px;
+}

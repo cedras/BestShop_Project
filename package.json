@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/cedras/BestShop_Project#readme",
   "dependencies": {
+    "sass": "^1.89.2",
     "vite": "^6.2.5"
   }
 }
