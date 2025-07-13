@@ -1,0 +1,144 @@
+.pricing {
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include notebook {
+    margin: 50px auto;
+    
+  }
+}
+
+.pricing_row {
+  display: flex;
+  justify-content: center;
+  margin-top: 71px;
+  gap: 30px;
+
+  @include notebook {
+      flex-direction: column;
+      width: 100%;
+    }
+}
+
+.single_pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 372px;
+  border-radius: 14px;
+  border: 1px solid var(--accent-color);
+
+  @include notebook {
+      width: 100%;
+      max-width: 370px;
+      margin: 50px auto;
+      justify-content: center;
+      align-items: center;
+      padding: 0px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 25px;
+
+    @include notebook {
+        margin-top: 0px;
+      &:last-child {
+        margin-bottom: 0;
+        
+      }
+    }
+
+    li::before {
+      content: "";
+      width: 11px;
+      height: 11px;
+      display: inline-block;
+      margin-right: 10px;
+      background-image: url("../assets/Close.svg");
+    }
+    .include::before {
+      content: "";
+      width: 11px;
+      height: 11px;
+      display: inline-block;
+      margin-right: 10px;
+      background-image: url("../assets/Ckechmark-1.svg");
+    }
+  }
+
+  .btn {
+    position: relative;
+    bottom: -25px;
+  }
+}
+
+
+.pricing_type {
+  font-size: 20px;
+  font-family: $font-raleway;
+  color: black;
+  font-weight: 700;
+  margin-top: 34px;
+}
+
+.price {
+  font-size: 46px;
+  font-family: $font-open-sans;
+  color: var(--accent-color);
+  font-weight: 300;
+  margin-top: 14px;
+}
+
+.pricing_limited {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 60px;
+  font-size: 0.75rem;
+  font-family: $font-raleway;
+  font-weight: 700;
+
+  
+}
+
+.pricing_basic {
+  --accent-color: #{$color-redish};
+  .price {
+    margin-bottom: 83px;
+
+    @include notebook {
+          margin-bottom: 0px;
+        }
+  }
+}
+
+.pricing_pro {
+  --accent-color: #{$color-primary};
+  width: 405px;
+  margin: 0 20px;
+  box-shadow: 0px 3px 6px $color-primary-shadow;
+  transform: scale(1.05);
+
+  @include notebook {
+        max-width: 400px;
+        width: 100%;
+        margin: 50px auto;
+      }
+  
+
+  .btn {
+    box-shadow: 5px 10px 14px $color-primary-shadow;
+  }
+}
+
+.pricing_premium {
+  --accent-color:  #{$color-green};
+}
+

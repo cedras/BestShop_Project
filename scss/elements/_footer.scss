@@ -1,0 +1,30 @@
+ footer {
+    height: 89px;
+    box-shadow: 0px -5px 40px var(--color-primary-shadow);
+    background-color: var(--color-light-grey);
+  }
+
+  .footer_container {
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+    
+  .footer_img {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    img {
+      height: 24px;
+      width: 24px;
+    }
+
+  }
+
+  p {
+    font-size: 11px;
+    color: var(--color-grey);
+  }
+
+  }
