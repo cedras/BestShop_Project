@@ -177,7 +177,7 @@
   align-items: center;
   justify-content: center;
   height: auto;
-  background-color: var(--accent-color);
+  background-color: $color-green;
   margin-left: 60px;
 
   @include tablet {
