@@ -17,7 +17,7 @@ function Calculator(form, summary){
         package: form.querySelector('#package'),
         accounting: form.querySelector('#accounting'),
         terminal: form.querySelector('#terminal'),
-    }
+    };
 
     this.summary = {
     list: summary.querySelector('ul'),
@@ -28,73 +28,9 @@ function Calculator(form, summary){
   },
 };
 
-Calculator.prototype.inputEvent = function (e) {
-    const id = e.currentTarget.id;
-    const value = e.currentTarget.value;
-    const singlePrice = this.prices[id];
-    const totalPrice = value * singlePrice;
+this.addEvents();
 
-    this.updateSummary(id, value + ' * $' + singlePrice, totalPrice, function (item, calc, total) {
-  if (value < 0) {
-    calc.innerHTML = null;
-    total.innerText = 'Value should be greater than 0';
-  }
-
-  if (value.length === 0) {
-    item.classList.remove('open');
-  }
-});
-
-this.updateTotal()
-};
-
-
-
-Calculator.prototype.updateSummary = function (id, calc, total, callback) {
-  const summary = this.summary.list.querySelector('[data-id=' + id + ']');
-  const summaryCalc = summary.querySelector('.item__calc');
-  const summaryTotal = summary.querySelector('.item__price');
-  summary.classList.add('open');
-
-  if (summaryCalc !== null) {
-  summaryCalc.innerText = calc;
 }
-
-summaryTotal.innerText = '$' + total;
-
-if (typeof callback === 'function') {
-  callback(summary, summaryCalc, summaryTotal);
-}
-
-};
-
-Calculator.prototype.selectEvent = function (e) {
-  this.form.package.classList.toggle('open');
-
-  const value = typeof e.target.dataset.value !== 'undefined' ? e.target.dataset.value : '';
-  const text = typeof e.target.dataset.value !== 'undefined' ? e.target.innerText : 'Choose package';
-
-  if (value.length > 0) {
-    this.form.package.dataset.value = value;
-    this.form.package.querySelector('.select__input').innerText = text;
-
-    this.updateSummary('package', text, this.prices.package[value]);
-  }
-  this.updateTotal()
-};
-
-Calculator.prototype.checkboxEvent = function (e) {
-  const checkbox = e.currentTarget;
-  const id = checkbox.id;
-  const checked = e.currentTarget.checked;
-
-  this.updateSummary(id, undefined, this.prices[id], function (item) {
-    if (!checked) {
-      item.classList.remove('open');
-    }
-  });
-  this.updateTotal()
-};
 
 Calculator.prototype.addEvents = function () {
   // Inputs
@@ -110,8 +46,6 @@ Calculator.prototype.addEvents = function () {
   this.form.accounting.addEventListener('change', this.checkboxEvent.bind(this));
   this.form.terminal.addEventListener('change', this.checkboxEvent.bind(this));
 };
-
-this.addEvents();
 
 Calculator.prototype.updateTotal = function () {
   const show = this.summary.list.querySelectorAll('.open').length > 0;
@@ -133,6 +67,87 @@ Calculator.prototype.updateTotal = function () {
 };
 
 
+
+
+Calculator.prototype.updateSummary = function (id, calc, total, callback) {
+  const summary = this.summary.list.querySelector('[data-id=' + id + ']');
+  const summaryCalc = summary.querySelector('.item__calc');
+  const summaryTotal = summary.querySelector('.item__price');
+  summary.classList.add('open');
+
+  if (summaryCalc !== null) {
+  summaryCalc.innerText = calc;
 }
+
+summaryTotal.innerText = '$' + total;
+
+if (typeof callback === 'function') {
+  callback(summary, summaryCalc, summaryTotal);
+}
+
+};
+
+Calculator.prototype.inputEvent = function (e) {
+    const id = e.currentTarget.id;
+    const value = e.currentTarget.value;
+    const singlePrice = this.prices[id];
+    const totalPrice = value * singlePrice;
+
+    this.updateSummary(id, value + ' * $' + singlePrice, totalPrice, function (item, calc, total) {
+  if (value < 0) {
+    calc.innerHTML = null;
+    total.innerText = 'Value should be greater than 0';
+  }
+
+  if (value.length === 0) {
+    item.classList.remove('open');
+  }
+});
+
+this.updateTotal();
+};
+
+Calculator.prototype.selectEvent = function (e) {
+  this.form.package.classList.toggle('open');
+
+  const value = typeof e.target.dataset.value !== 'undefined' ? e.target.dataset.value : '';
+  const text = typeof e.target.dataset.value !== 'undefined' ? e.target.innerText : 'Choose package';
+
+  if (value.length > 0) {
+    this.form.package.dataset.value = value;
+    this.form.package.querySelector('.select__input').innerText = text;
+
+    this.updateSummary('package', text, this.prices.package[value]);
+    this.updateTotal();
+  }
+  
+};
+
+Calculator.prototype.checkboxEvent = function (e) {
+  const checkbox = e.currentTarget;
+  const id = checkbox.id;
+  const checked = e.currentTarget.checked;
+
+  this.updateSummary(id, undefined, this.prices[id], function (item) {
+    if (!checked) {
+      item.classList.remove('open');
+    }
+  });
+  this.updateTotal();
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('.calc__form');
+    const summary = document.querySelector('.calc__summary');
+
+    new Calculator(form, summary);
+});
+
+
+
+
+
+
+
 
 
