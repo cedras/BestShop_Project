@@ -9,6 +9,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="scss/main.scss"/>
+
+  
   </head>
   <body>
     <header class="header">
@@ -155,44 +157,47 @@
       </div>
     </section>
     <section class="calc">
-      <h2>Calculate how much you'll pay</h2>
-      <div class="calc_columns">
-        <form class="calc__form">
-          <div class="calc__input">
-            <input type="number" class="form_input" class="form__input" min="1" step="1" placeholder="Products quanity" />
+    <h2>Calculate how much you’ll pay</h2>
+    
+    <div class="calc__columns">
+      <form class="calc__form">
+        <div class="calc__input">
+          <input type="number" class="form__input" id="products" min="1" step="1" placeholder="Products quantity"/>
+        </div>
+        <div class="calc__input">
+          <input type="number" class="form__input" id="orders" min="1" step="1" placeholder="Estimated orders in month"/>
+        </div>
+        <div class="calc__select" id="package" data-value="">
+          <div class="select__input">
+            Choose package
           </div>
-          <div class="calc__input">
-            <input type="number" class="form_input" class="form__input" min="1" step="1" placeholder="Estimated orders in month" />
-          </div>
-          <div class="calc__select">
-            <div class="select__input" id="package" data-value="">
-              Choose package
-            </div>
-          </div>
+    
           <ul class="select__dropdown">
             <li data-value="basic">Basic</li>
             <li data-value="professional">Professional</li>
             <li data-value="premium">Premium</li>
           </ul>
-          <label class="form__checkbox">
-            <input type="checkbox" id="accounting"/>
-            <span class="checkbox"></span>
-            <p class="consent__text">Accounting</p>
-          </label>
-          <label class="form__checkbox">
-            <input type="checkbox" id="terminal" />
-            <span class="checkbox"></span>
-            <p class="consent__text">Rental of a payment terminal</p>
-          </label>
-        </form>
-        <div class="calc_summary">
-            <ul>
-              <li class="list__item" data-id="products">
-              <span class="item__type">Products</span>
-              <span class="item__calc">20 * $0.5</span>
-              <span class="item__price">$10</span>
-              </li>
-              <li class="list__item" data-id="orders">
+        </div>
+        <label class="form__checkbox">
+          <input type="checkbox" id="accounting"/>
+          <span class="checkbox"></span>
+          <p class="consent__text">Accounting</p>
+        </label>
+        <label class="form__checkbox">
+          <input type="checkbox" id="terminal"/>
+          <span class="checkbox"></span>
+          <p class="consent__text">Rental of a payment terminal</p>
+        </label>
+      </form>
+    
+      <div class="calc__summary">
+        <ul>
+          <li class="list__item" data-id="products">
+            <span class="item__type">Products</span>
+            <span class="item__calc">20 * $0.5</span>
+            <span class="item__price">$10</span>
+          </li>
+          <li class="list__item" data-id="orders">
             <span class="item__type">Orders</span>
             <span class="item__calc">20 * $0.5</span>
             <span class="item__price">$10</span>
@@ -210,14 +215,14 @@
             <span class="item__type">Terminal</span>
             <span class="item__price">$10</span>
           </li>
-            </ul>
-            <div class="summary__total" id="total-price">
-              <span>Total</span>
-              <span class="total__price">$700</span>
-            </div>
-          </div>
+        </ul>
+        <div class="summary__total" id="total-price">
+          <span>Total</span>
+          <span class="total__price">$700</span>
+        </div>
       </div>
-    </section>
+    </div>
+</section>
     <section class="contact container" id="contact">
       <div class="contact_column">
       <div class="contact_info">
@@ -266,5 +271,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="js/app.js"></script>
   </body>
 </html>
